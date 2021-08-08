@@ -1,0 +1,44 @@
+{
+  "name": "@cnl/mui-editor",
+  "version": "0.0.1",
+  "description": "Rich text edtior built on tiptap2",
+  "author": "Yuanzong Qiu <congge@gmail.com>",
+  "license": "UNLICENSED",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "prepare": "tsc",
+    "lint": "eslint .",
+    "format": "eslint --fix ."
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "@tiptap/extension-image": "^2.0.0-beta.15",
+    "@tiptap/extension-link": "^2.0.0-beta.19",
+    "@tiptap/extension-underline": "^2.0.0-beta.16",
+    "@tiptap/react": "^2.0.0-beta.55",
+    "@tiptap/starter-kit": "^2.0.0-beta.89"
+  },
+  "devDependencies": {
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.3.2",
+    "react": "^17.0.2"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "@material-ui/core": "4.*",
+    "@material-ui/icons": "^4.*"
+  }
+}
