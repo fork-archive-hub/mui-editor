@@ -15,7 +15,7 @@ import {
 import { ChainedCommands, Editor } from '@tiptap/react';
 import React from 'react';
 import MenuButton from './menu-button';
-import MenuButtonImage from './menu-button-image';
+import MenuButtonImage, { ImageProps } from './menu-button-image';
 import MenuButtonLink from './menu-button-link';
 import MenuHeadings from './menu-headings';
 
@@ -79,7 +79,7 @@ const formats: MenuProps[] = [
 
 export default function Toolbar(props: {
   editor: Editor | null;
-  onImageSelected?: (file: File) => Promise<string>;
+  image?: ImageProps;
 }) {
   return (
     <CardActions>
@@ -95,11 +95,8 @@ export default function Toolbar(props: {
         </MenuButton>
       ))}
       <MenuButtonLink editor={props.editor} />
-      {props.onImageSelected && (
-        <MenuButtonImage
-          onSelected={props.onImageSelected}
-          editor={props.editor}
-        />
+      {props.image && (
+        <MenuButtonImage {...props.image} editor={props.editor} />
       )}
       <Divider orientation={'vertical'} style={{ height: 24 }} />
       <MenuButton

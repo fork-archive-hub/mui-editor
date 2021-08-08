@@ -3,30 +3,16 @@ import { Photo } from '@material-ui/icons';
 import { Editor } from '@tiptap/react';
 import React from 'react';
 
-interface Props {
-  editor: Editor | null;
+export interface ImageProps {
+  uploading: boolean;
   onSelected: (file: File) => Promise<string>;
 }
 
+interface Props extends ImageProps {
+  editor: Editor | null;
+}
+
 export default function MenuButtonImage(props: Props) {
-  const [uploading, setUploading] = React.useState(false);
-
-  const onChange = async (evt: React.ChangeEvent<HTMLInputElement>) => {
-    if (!props.editor || !evt.target.files) {
-      return;
-    }
-
-    setUploading(true);
-
-    try {
-      const file = evt.target.files[0];
-      const url = await props.onSelected(file);
-      props.editor.chain().focus().setImage({ src: url, alt: file.name }).run();
-    } finally {
-      setUploading(false);
-    }
-  };
-
   return (
     <label>
       <input
@@ -34,11 +20,24 @@ export default function MenuButtonImage(props: Props) {
         multiple={false}
         accept="image/webp,image/gif,image/png,image/jpeg"
         style={{ display: 'none' }}
-        onChange={onChange}
+        onChange={evt => {
+          if (evt.target.files) {
+            const file = evt.target.files[0];
+            return props
+              .onSelected(file)
+              .then(url =>
+                props.editor
+                  ?.chain()
+                  .focus()
+                  .setImage({ src: url, alt: file.name })
+                  .run()
+              );
+          }
+        }}
       />
 
       <IconButton
-        disabled={!props.editor || uploading}
+        disabled={!props.editor || props.uploading}
         size={'small'}
         component="span"
       >

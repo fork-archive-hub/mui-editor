@@ -6,14 +6,15 @@ import Underline from '@tiptap/extension-underline';
 import { EditorContent, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import React from 'react';
+import { ImageProps } from './menu-button-image';
 
 import Toolbar from './toolbar';
 
 interface Props extends Pick<CardProps, 'className' | 'style' | 'variant'> {
   initialContent: string;
-  onImageSelected?: (file: File) => Promise<string>;
   onChange: (value: string) => void;
   onCreate?: (editor: Editor) => void;
+  image?: ImageProps;
 }
 
 export default function TextEditor(props: Props) {
@@ -46,7 +47,7 @@ export default function TextEditor(props: Props) {
       className={props.className}
       style={props.style}
     >
-      <Toolbar editor={editor} onImageSelected={props.onImageSelected} />
+      <Toolbar editor={editor} image={props.image} />
       <div
         style={{
           borderTop: `1px solid ${theme.palette.divider}`,
