@@ -3,17 +3,20 @@
   "version": "0.0.1",
   "description": "Rich text edtior built on tiptap2",
   "author": "Yuanzong Qiu <congge@gmail.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": "https://github.com/yuanzong/mui-editor",
   "files": [
     "dist"
   ],
   "scripts": {
-    "clean": "rm -rf dist",
-    "prepare": "tsc",
+    "build": "tsc",
     "lint": "eslint .",
-    "format": "eslint --fix ."
+    "format": "eslint --fix .",
+    "preversion": "rm -rf dist",
+    "version": "npm run build",
+    "postversion": "git push && git push --tags"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
