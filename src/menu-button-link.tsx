@@ -5,7 +5,7 @@ import {
   DialogContent,
   IconButton,
   Input,
-  InputAdornment
+  InputAdornment,
 } from '@material-ui/core';
 import { ClearTwoTone, InsertLink } from '@material-ui/icons';
 import { Editor } from '@tiptap/react';
@@ -30,7 +30,7 @@ export default function MenuButtonLink(props: { editor: Editor | null }) {
               .focus()
               .extendMarkRange('link')
               .setLink({
-                href
+                href,
               })
               .run();
           }}

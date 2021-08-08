@@ -31,7 +31,7 @@ export default function MenuHeadings(props: {
             .chain()
             .focus()
             .toggleHeading({
-              level: value
+              level: value,
             })
             .run();
         }
