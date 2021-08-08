@@ -1,5 +1,5 @@
 {
-  "name": "@cnl/mui-editor",
+  "name": "cnl-mui-editor",
   "version": "0.0.1",
   "description": "Rich text edtior built on tiptap2",
   "author": "Yuanzong Qiu <congge@gmail.com>",
