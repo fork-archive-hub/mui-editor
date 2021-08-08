@@ -79,7 +79,7 @@ const formats: MenuProps[] = [
 
 export default function Toolbar(props: {
   editor: Editor | null;
-  onSelectImage?: (image: File) => Promise<string>;
+  onImageSelected?: (file: File) => Promise<string>;
 }) {
   return (
     <CardActions>
@@ -95,8 +95,11 @@ export default function Toolbar(props: {
         </MenuButton>
       ))}
       <MenuButtonLink editor={props.editor} />
-      {props.onSelectImage && (
-        <MenuButtonImage onSelect={props.onSelectImage} editor={props.editor} />
+      {props.onImageSelected && (
+        <MenuButtonImage
+          onSelected={props.onImageSelected}
+          editor={props.editor}
+        />
       )}
       <Divider orientation={'vertical'} style={{ height: 24 }} />
       <MenuButton

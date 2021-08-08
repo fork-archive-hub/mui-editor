@@ -11,7 +11,7 @@ import Toolbar from './toolbar';
 
 interface Props extends Pick<CardProps, 'className' | 'style' | 'variant'> {
   initialContent: string;
-  onSelectImage: (image: File) => Promise<string>;
+  onImageSelected?: (file: File) => Promise<string>;
   onChange: (value: string) => void;
   onCreate?: (editor: Editor) => void;
 }
@@ -46,7 +46,7 @@ export default function TextEditor(props: Props) {
       className={props.className}
       style={props.style}
     >
-      <Toolbar editor={editor} onSelectImage={props.onSelectImage} />
+      <Toolbar editor={editor} onImageSelected={props.onImageSelected} />
       <div
         style={{
           borderTop: `1px solid ${theme.palette.divider}`,

@@ -5,7 +5,7 @@ import React from 'react';
 
 interface Props {
   editor: Editor | null;
-  onSelect: (file: File) => Promise<string>;
+  onSelected: (file: File) => Promise<string>;
 }
 
 export default function MenuButtonImage(props: Props) {
@@ -17,9 +17,11 @@ export default function MenuButtonImage(props: Props) {
     }
 
     setUploading(true);
+
     try {
-      const src = await props.onSelect(evt.target.files[0]);
-      props.editor.chain().focus().setImage({ src }).run();
+      const file = evt.target.files[0];
+      const url = await props.onSelected(file);
+      props.editor.chain().focus().setImage({ src: url, alt: file.name }).run();
     } finally {
       setUploading(false);
     }
@@ -34,6 +36,7 @@ export default function MenuButtonImage(props: Props) {
         style={{ display: 'none' }}
         onChange={onChange}
       />
+
       <IconButton
         disabled={!props.editor || uploading}
         size={'small'}
