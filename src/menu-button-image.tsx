@@ -1,4 +1,4 @@
-import { IconButton } from '@material-ui/core';
+import { IconButton, CircularProgress } from '@material-ui/core';
 import { Photo } from '@material-ui/icons';
 import { Editor } from '@tiptap/react';
 import React from 'react';
@@ -43,7 +43,7 @@ export default function MenuButtonImage(props: Props) {
         size={'small'}
         component="span"
       >
-        <Photo />
+        {props.uploading ? <CircularProgress size={18} /> : <Photo />}
       </IconButton>
     </label>
   );
