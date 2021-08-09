@@ -44,7 +44,11 @@ export default function TextEditor(props: Props) {
   });
 
   return (
-    <Card variant={props.variant} className={props.className}>
+    <Card
+      variant={props.variant}
+      className={props.className}
+      style={props.style}
+    >
       <Toolbar editor={editor} image={props.image} />
       <div
         style={{
@@ -55,7 +59,7 @@ export default function TextEditor(props: Props) {
       >
         <EditorContent
           editor={editor}
-          style={{ ...theme.typography.body1, ...props.style }}
+          style={{ ...theme.typography.body1, minHeight: 64 }}
         />
       </div>
     </Card>
