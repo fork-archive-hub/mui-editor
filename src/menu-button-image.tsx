@@ -5,7 +5,7 @@ import React from 'react';
 
 export interface ImageProps {
   uploading: boolean;
-  onSelected: (file: File) => Promise<string>;
+  onSelected: (file: File) => Promise<string | null>;
 }
 
 interface Props extends ImageProps {
@@ -21,18 +21,20 @@ export default function MenuButtonImage(props: Props) {
         accept="image/webp,image/gif,image/png,image/jpeg"
         style={{ display: 'none' }}
         onChange={evt => {
-          if (evt.target.files) {
-            const file = evt.target.files[0];
-            return props
-              .onSelected(file)
-              .then(url =>
-                props.editor
-                  ?.chain()
-                  .focus()
-                  .setImage({ src: url, alt: file.name })
-                  .run()
-              );
+          if (!evt.target.files || evt.target.files.length !== 1) {
+            return;
           }
+
+          const file = evt.target.files[0];
+          props.onSelected(file).then(url => {
+            if (url && props.editor) {
+              props.editor
+                .chain()
+                .focus()
+                .setImage({ src: url, alt: file.name })
+                .run();
+            }
+          });
         }}
       />
 
