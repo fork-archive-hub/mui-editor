@@ -8,7 +8,9 @@
   "types": "dist/index.d.ts",
   "repository": "https://github.com/yuanzong/mui-editor",
   "files": [
-    "dist"
+    "dist",
+    "src",
+    "styles.css"
   ],
   "scripts": {
     "build": "tsc",
