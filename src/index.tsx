@@ -13,9 +13,11 @@ import Toolbar from './toolbar';
 interface Props extends Pick<CardProps, 'className' | 'style' | 'variant'> {
   initialContent: string;
   onChange: (value: string) => void;
-  onCreate?: (editor: Editor) => void;
+  editorRef?: React.MutableRefObject<Editor>;
   image?: ImageProps;
 }
+
+export { Editor, EditorOptions } from '@tiptap/core';
 
 export default function TextEditor(props: Props) {
   const theme = useTheme();
@@ -32,8 +34,8 @@ export default function TextEditor(props: Props) {
     ],
     content: props.initialContent,
     onCreate(params) {
-      if (props.onCreate) {
-        props.onCreate(params.editor);
+      if (props.editorRef) {
+        props.editorRef.current = params.editor;
       }
     },
     onUpdate(params) {
@@ -42,11 +44,7 @@ export default function TextEditor(props: Props) {
   });
 
   return (
-    <Card
-      variant={props.variant}
-      className={props.className}
-      style={props.style}
-    >
+    <Card variant={props.variant} className={props.className}>
       <Toolbar editor={editor} image={props.image} />
       <div
         style={{
@@ -55,7 +53,10 @@ export default function TextEditor(props: Props) {
           backgroundColor: theme.palette.background.default,
         }}
       >
-        <EditorContent editor={editor} style={theme.typography.body1} />
+        <EditorContent
+          editor={editor}
+          style={{ ...theme.typography.body1, ...props.style }}
+        />
       </div>
     </Card>
   );
