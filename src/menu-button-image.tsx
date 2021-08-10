@@ -5,7 +5,8 @@ import React from 'react';
 
 export interface ImageProps {
   uploading: boolean;
-  onSelected: (file: File) => Promise<string | null>;
+  onSelected: (file: File) => Promise<string>;
+  onError: (error: Error) => void;
 }
 
 interface Props extends ImageProps {
@@ -26,20 +27,24 @@ export default function MenuButtonImage(props: Props) {
           }
 
           const file = evt.target.files[0];
-          props.onSelected(file).then(url => {
-            if (url && props.editor) {
-              props.editor
-                .chain()
-                .focus()
-                .setImage({ src: url, alt: file.name })
-                .run();
-            }
-          });
+
+          props
+            .onSelected(file)
+            .then(url => {
+              if (url && props.editor) {
+                props.editor
+                  .chain()
+                  .focus()
+                  .setImage({ src: url, alt: file.name })
+                  .run();
+              }
+            })
+            .catch(props.onError);
         }}
       />
 
       <IconButton
-        disabled={!props.editor || props.uploading}
+        disabled={props.uploading || !props.editor}
         size={'small'}
         component="span"
       >
