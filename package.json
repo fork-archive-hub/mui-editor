@@ -5,7 +5,7 @@
   "description": "Rich text edtior built on tiptap2",
   "author": "Yuanzong Qiu <congge@gmail.com>",
   "license": "MIT",
-  "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "https://github.com/yuanzong/mui-editor",
   "files": [
