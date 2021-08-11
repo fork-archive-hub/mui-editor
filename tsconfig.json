@@ -1,15 +1,16 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "declaration": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "module": "esnext",
     "target": "es6",
     "lib": ["es2019", "dom"],
+    "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
     "noEmitOnError": true,
-    "outDir": "dist",
     "jsx": "react",
-    "declaration": true,
     "strict": true
   },
   "include": ["src/"]

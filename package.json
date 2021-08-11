@@ -1,5 +1,6 @@
 {
   "name": "cnl-mui-editor",
+  "sideEffects": false,
   "version": "0.6.0",
   "description": "Rich text edtior built on tiptap2",
   "author": "Yuanzong Qiu <congge@gmail.com>",
