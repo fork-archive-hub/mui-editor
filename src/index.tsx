@@ -72,9 +72,13 @@ export default function TextEditor(props: Props) {
         {error && (
           <Snackbar
             open={Boolean(error)}
-            autoHideDuration={5000}
+            autoHideDuration={8000}
             onClose={() => setError('')}
-            style={{ position: 'absolute', top: 0, right: 0 }}
+            style={{ position: 'absolute' }}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'center',
+            }}
             message={error}
           />
         )}
