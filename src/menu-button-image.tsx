@@ -1,4 +1,4 @@
-import { IconButton, CircularProgress } from '@material-ui/core';
+import { IconButton } from '@material-ui/core';
 import { Photo } from '@material-ui/icons';
 import { Editor } from '@tiptap/react';
 import React from 'react';
@@ -6,11 +6,11 @@ import React from 'react';
 export interface ImageProps {
   uploading: boolean;
   onSelected: (file: File) => Promise<string>;
-  onError: (error: Error) => void;
 }
 
 interface Props extends ImageProps {
   editor: Editor | null;
+  setError: (err: string) => void;
 }
 
 export default function MenuButtonImage(props: Props) {
@@ -39,7 +39,9 @@ export default function MenuButtonImage(props: Props) {
                   .run();
               }
             })
-            .catch(props.onError);
+            .catch(err =>
+              props.setError(err.message || `Fail to upload ${file.name}`)
+            );
         }}
       />
 
@@ -48,7 +50,7 @@ export default function MenuButtonImage(props: Props) {
         size={'small'}
         component="span"
       >
-        {props.uploading ? <CircularProgress size={18} /> : <Photo />}
+        <Photo />
       </IconButton>
     </label>
   );

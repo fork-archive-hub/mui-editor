@@ -79,6 +79,7 @@ const formats: MenuProps[] = [
 
 export default function Toolbar(props: {
   editor: Editor | null;
+  setError: (err: string) => void;
   image?: ImageProps;
 }) {
   return (
@@ -96,7 +97,11 @@ export default function Toolbar(props: {
       ))}
       <MenuButtonLink editor={props.editor} />
       {props.image && (
-        <MenuButtonImage {...props.image} editor={props.editor} />
+        <MenuButtonImage
+          {...props.image}
+          editor={props.editor}
+          setError={props.setError}
+        />
       )}
       <Divider orientation={'vertical'} style={{ height: 24 }} />
       <MenuButton
