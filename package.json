@@ -5,7 +5,8 @@
   "description": "Rich text edtior built on tiptap2",
   "author": "Yuanzong Qiu <congge@gmail.com>",
   "license": "MIT",
-  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "repository": "https://github.com/yuanzong/mui-editor",
   "files": [
@@ -14,12 +15,13 @@
     "styles.css"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "rollup --config rollup.config.js",
     "lint": "eslint .",
     "format": "eslint --fix .",
     "preversion": "rm -rf dist",
     "version": "npm run build",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "rollup": "rollup"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
@@ -34,6 +36,7 @@
   "devDependencies": {
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
+    "@rollup/plugin-typescript": "^8.2.5",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@typescript-eslint/parser": "^4.29.1",
     "eslint": "^7.32.0",
@@ -43,6 +46,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.3.2",
     "react": "^17.0.2",
+    "rollup": "^2.56.2",
     "typescript": "^4.3.5"
   },
   "peerDependencies": {
