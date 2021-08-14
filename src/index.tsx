@@ -57,16 +57,12 @@ export default function TextEditor(props: Props) {
         const image = Array.from(clipboardItems).find(item =>
           item.type.includes('image')
         );
-
         if (!image) {
           return false;
         }
 
+        // disable paste image
         event.preventDefault();
-        if (props.image) {
-          props.image.onSelected(image);
-        }
-
         return true;
       },
     },
