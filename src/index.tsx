@@ -10,14 +10,14 @@ import { Editor } from '@tiptap/core';
 import Image from '@tiptap/extension-image';
 import Link from '@tiptap/extension-link';
 import Underline from '@tiptap/extension-underline';
-import { EditorContent, useEditor } from '@tiptap/react';
+import { Content, EditorContent, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import React from 'react';
 import { ImageProps } from './menu-button-image';
 import Toolbar from './toolbar';
 
 interface Props extends Pick<CardProps, 'className' | 'style' | 'variant'> {
-  initialContent?: string;
+  initialContent?: Content;
   editorRef?: React.MutableRefObject<Editor | undefined>;
   onChange: (value: string) => void;
   image?: ImageProps;
@@ -30,6 +30,7 @@ export default function TextEditor(props: Props) {
   const [error, setError] = React.useState('');
 
   const editor = useEditor({
+    content: props.initialContent,
     extensions: [
       StarterKit,
       Image,
@@ -39,7 +40,6 @@ export default function TextEditor(props: Props) {
         linkOnPaste: true,
       }),
     ],
-    content: props.initialContent || '',
     onCreate(params) {
       if (props.editorRef) {
         props.editorRef.current = params.editor;
@@ -47,6 +47,28 @@ export default function TextEditor(props: Props) {
     },
     onUpdate(params) {
       props.onChange(params.editor.getHTML());
+    },
+    editorProps: {
+      handlePaste(view, event) {
+        // Get the data of clipboard
+        const clipboardItems = event.clipboardData?.files;
+        if (!clipboardItems) return false;
+
+        const image = Array.from(clipboardItems).find(item =>
+          item.type.includes('image')
+        );
+
+        if (!image) {
+          return false;
+        }
+
+        event.preventDefault();
+        if (props.image) {
+          props.image.onSelected(image);
+        }
+
+        return true;
+      },
     },
   });
 
