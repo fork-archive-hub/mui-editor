@@ -13,7 +13,7 @@ import {
   Undo,
 } from '@material-ui/icons';
 import { ChainedCommands, Editor } from '@tiptap/react';
-import React from 'react';
+import * as React from 'react';
 import MenuButton from './menu-button';
 import MenuButtonImage, { ImageProps } from './menu-button-image';
 import MenuButtonLink from './menu-button-link';

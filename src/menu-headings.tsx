@@ -1,7 +1,7 @@
 import { Select } from '@material-ui/core';
 import { HeadingOptions } from '@tiptap/extension-heading';
 import { Editor } from '@tiptap/react';
-import React from 'react';
+import * as React from 'react';
 
 export default function MenuHeadings(props: {
   editor: Editor | null;

@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core';
 import { ClearTwoTone, InsertLink } from '@material-ui/icons';
 import { Editor } from '@tiptap/react';
-import React from 'react';
+import * as React from 'react';
 
 export default function MenuButtonLink(props: { editor: Editor | null }) {
   const [open, setOpen] = React.useState(false);

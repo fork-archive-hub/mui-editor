@@ -1,7 +1,7 @@
 import { IconButton } from '@material-ui/core';
 import { Photo } from '@material-ui/icons';
 import { Editor } from '@tiptap/react';
-import React from 'react';
+import * as React from 'react';
 
 export interface ImageProps {
   uploading: boolean;

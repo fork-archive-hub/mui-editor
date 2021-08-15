@@ -15,7 +15,7 @@
     "styles.css"
   ],
   "scripts": {
-    "build": "rollup --config rollup.config.js",
+    "build": "rollup --config",
     "lint": "eslint .",
     "format": "eslint --fix .",
     "preversion": "rm -rf dist",

@@ -6,7 +6,7 @@ export default {
     {
       dir: 'dist',
       format: 'umd',
-      name: 'TextEditor',
+      name: 'MUIEditor',
     },
     {
       file: 'dist/index.esm.js',

@@ -1,6 +1,6 @@
 import { IconButton } from '@material-ui/core';
 import { ChainedCommands, Editor } from '@tiptap/react';
-import React from 'react';
+import * as React from 'react';
 
 export default function MenuButton(props: {
   editor: Editor | null;

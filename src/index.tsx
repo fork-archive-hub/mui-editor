@@ -12,7 +12,7 @@ import Link from '@tiptap/extension-link';
 import Underline from '@tiptap/extension-underline';
 import { Content, EditorContent, useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
-import React from 'react';
+import * as React from 'react';
 import { ImageProps } from './menu-button-image';
 import Toolbar from './toolbar';
 
@@ -25,7 +25,7 @@ interface Props extends Pick<CardProps, 'className' | 'style' | 'variant'> {
 
 export { Editor, EditorOptions } from '@tiptap/core';
 
-export default function TextEditor(props: Props) {
+export default function MUIEditor(props: Props) {
   const theme = useTheme();
   const [error, setError] = React.useState('');
 
