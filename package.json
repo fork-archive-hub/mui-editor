@@ -27,22 +27,23 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
+    "@tiptap/core": "^2.0.0-beta.100",
     "@tiptap/extension-image": "^2.0.0-beta.15",
     "@tiptap/extension-link": "^2.0.0-beta.19",
     "@tiptap/extension-underline": "^2.0.0-beta.16",
-    "@tiptap/react": "^2.0.0-beta.60",
-    "@tiptap/starter-kit": "^2.0.0-beta.97"
+    "@tiptap/react": "^2.0.0-beta.61",
+    "@tiptap/starter-kit": "^2.0.0-beta.98"
   },
   "devDependencies": {
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@rollup/plugin-typescript": "^8.2.5",
-    "@types/react": "^17.0.18",
-    "@typescript-eslint/eslint-plugin": "^4.29.1",
-    "@typescript-eslint/parser": "^4.29.1",
+    "@types/react": "^17.0.19",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-prettier": "^3.4.1",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.3.2",
