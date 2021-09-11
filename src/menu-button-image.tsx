@@ -1,5 +1,5 @@
-import { IconButton } from '@material-ui/core';
-import { Photo } from '@material-ui/icons';
+import { IconButton } from '@mui/material';
+import { Photo } from '@mui/icons-material';
 import { Editor } from '@tiptap/react';
 import * as React from 'react';
 

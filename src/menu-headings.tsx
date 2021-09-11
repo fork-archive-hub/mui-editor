@@ -1,4 +1,4 @@
-import { Select } from '@material-ui/core';
+import { Select } from '@mui/material';
 import { HeadingOptions } from '@tiptap/extension-heading';
 import { Editor } from '@tiptap/react';
 import * as React from 'react';

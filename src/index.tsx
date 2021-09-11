@@ -4,8 +4,9 @@ import {
   Divider,
   LinearProgress,
   Snackbar,
+  Alert,
   useTheme,
-} from '@material-ui/core';
+} from '@mui/material';
 import { Editor } from '@tiptap/core';
 import Image from '@tiptap/extension-image';
 import Link from '@tiptap/extension-link';
@@ -28,6 +29,7 @@ export { Editor, EditorOptions } from '@tiptap/core';
 export default function MUIEditor(props: Props) {
   const theme = useTheme();
   const [error, setError] = React.useState('');
+  const onCloseAlert = () => setError('');
 
   const editor = useEditor({
     content: props.initialContent,
@@ -90,15 +92,18 @@ export default function MUIEditor(props: Props) {
         {error && (
           <Snackbar
             open={Boolean(error)}
-            autoHideDuration={8000}
-            onClose={() => setError('')}
+            autoHideDuration={5000}
+            onClose={onCloseAlert}
             style={{ position: 'absolute' }}
             anchorOrigin={{
               vertical: 'top',
               horizontal: 'center',
             }}
-            message={error}
-          />
+          >
+            <Alert onClose={onCloseAlert} severity="warning">
+              {error}
+            </Alert>
+          </Snackbar>
         )}
         <EditorContent
           editor={editor}

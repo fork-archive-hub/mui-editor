@@ -1,4 +1,4 @@
-import { CardActions, Divider } from '@material-ui/core';
+import { CardActions, Divider } from '@mui/material';
 import {
   FormatBold,
   FormatClear,
@@ -11,7 +11,7 @@ import {
   Redo,
   SvgIconComponent,
   Undo,
-} from '@material-ui/icons';
+} from '@mui/icons-material';
 import { ChainedCommands, Editor } from '@tiptap/react';
 import * as React from 'react';
 import MenuButton from './menu-button';
