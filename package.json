@@ -17,7 +17,7 @@
   "scripts": {
     "build": "rollup --config",
     "lint": "eslint .",
-    "format": "eslint --fix .",
+    "fix": "eslint --fix .",
     "preversion": "rm -rf dist",
     "version": "npm run build",
     "postversion": "git push && git push --tags",
@@ -28,29 +28,29 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "@tiptap/core": "^2.0.0-beta.102",
+    "@tiptap/core": "^2.0.0-beta.105",
     "@tiptap/extension-image": "^2.0.0-beta.15",
-    "@tiptap/extension-link": "^2.0.0-beta.19",
+    "@tiptap/extension-link": "^2.0.0-beta.20",
     "@tiptap/extension-underline": "^2.0.0-beta.16",
-    "@tiptap/react": "^2.0.0-beta.63",
-    "@tiptap/starter-kit": "^2.0.0-beta.101"
+    "@tiptap/react": "^2.0.0-beta.66",
+    "@tiptap/starter-kit": "^2.0.0-beta.104"
   },
   "devDependencies": {
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@rollup/plugin-typescript": "^8.2.5",
-    "@types/react": "^17.0.19",
-    "@typescript-eslint/eslint-plugin": "^4.29.3",
-    "@typescript-eslint/parser": "^4.29.3",
+    "@types/react": "^17.0.20",
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "@typescript-eslint/parser": "^4.31.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-react": "^7.25.0",
+    "eslint-plugin-react": "^7.25.1",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.3.2",
+    "husky": "^7.0.0",
+    "prettier": "^2.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rollup": "^2.56.3",
-    "typescript": "~4.3.5",
-    "husky": "^7.0.0"
+    "typescript": "~4.4.3"
   },
   "peerDependencies": {
     "react": "*",
