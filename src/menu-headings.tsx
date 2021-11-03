@@ -14,6 +14,8 @@ export default function MenuHeadings(props: {
   return (
     <Select
       value={value ?? ''}
+      size="small"
+      variant="standard"
       native={true}
       style={{ width: 108 }}
       onChange={evt => {
