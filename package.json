@@ -28,20 +28,20 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "@tiptap/core": "^2.0.0-beta.130",
+    "@tiptap/core": "^2.0.0-beta.133",
     "@tiptap/extension-image": "^2.0.0-beta.21",
     "@tiptap/extension-link": "^2.0.0-beta.25",
     "@tiptap/extension-underline": "^2.0.0-beta.18",
-    "@tiptap/react": "^2.0.0-beta.87",
-    "@tiptap/starter-kit": "^2.0.0-beta.132"
+    "@tiptap/react": "^2.0.0-beta.89",
+    "@tiptap/starter-kit": "^2.0.0-beta.135"
   },
   "devDependencies": {
-    "@mui/icons-material": "^5.0.0",
-    "@mui/material": "^5.0.0",
+    "@mui/icons-material": "^5.1.0",
+    "@mui/material": "^5.1.0",
     "@rollup/plugin-typescript": "^8.2.5",
     "@types/react": "^17.0.34",
-    "@typescript-eslint/eslint-plugin": "^5.3.0",
-    "@typescript-eslint/parser": "^5.3.0",
+    "@typescript-eslint/eslint-plugin": "^5.3.1",
+    "@typescript-eslint/parser": "^5.3.1",
     "eslint": "^7.32.0",
     "eslint-plugin-react": "^7.25.1",
     "husky": "^7.0.0",
