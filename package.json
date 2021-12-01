@@ -28,27 +28,27 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "@tiptap/core": "^2.0.0-beta.133",
-    "@tiptap/extension-image": "^2.0.0-beta.21",
-    "@tiptap/extension-link": "^2.0.0-beta.25",
-    "@tiptap/extension-underline": "^2.0.0-beta.18",
-    "@tiptap/react": "^2.0.0-beta.89",
-    "@tiptap/starter-kit": "^2.0.0-beta.135"
+    "@tiptap/core": "^2.0.0-beta.143",
+    "@tiptap/extension-image": "^2.0.0-beta.24",
+    "@tiptap/extension-link": "^2.0.0-beta.28",
+    "@tiptap/extension-underline": "^2.0.0-beta.21",
+    "@tiptap/react": "^2.0.0-beta.95",
+    "@tiptap/starter-kit": "^2.0.0-beta.145"
   },
   "devDependencies": {
-    "@mui/icons-material": "^5.1.0",
-    "@mui/material": "^5.1.0",
+    "@mui/icons-material": "^5.2.0",
+    "@mui/material": "^5.2.2",
     "@rollup/plugin-typescript": "^8.2.5",
-    "@types/react": "^17.0.34",
-    "@typescript-eslint/eslint-plugin": "^5.3.1",
-    "@typescript-eslint/parser": "^5.3.1",
-    "eslint": "^7.32.0",
-    "eslint-plugin-react": "^7.25.1",
+    "@types/react": "^17.0.37",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "eslint": "^8.3.0",
+    "eslint-plugin-react": "^7.27.1",
     "husky": "^7.0.0",
-    "prettier": "^2.4.1",
+    "prettier": "^2.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "rollup": "^2.59.0",
+    "rollup": "^2.60.2",
     "typescript": "~4.4.3"
   },
   "peerDependencies": {
