@@ -29,12 +29,12 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "@tiptap/core": "~2.0.0-beta.181",
+    "@tiptap/core": "~2.0.0-beta.182",
     "@tiptap/extension-image": "~2.0.0-beta.30",
     "@tiptap/extension-link": "~2.0.0-beta.43",
     "@tiptap/extension-underline": "^2.0.0-beta.25",
     "@tiptap/react": "~2.0.0-beta.114",
-    "@tiptap/starter-kit": "~2.0.0-beta.190"
+    "@tiptap/starter-kit": "~2.0.0-beta.191"
   },
   "devDependencies": {
     "@mui/icons-material": "^5.3.1",
@@ -49,7 +49,7 @@
     "prettier": "^2.5.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "rollup": "^2.67.0",
+    "rollup": "^2.76.0",
     "typescript": "^4.5.5"
   },
   "peerDependencies": {
